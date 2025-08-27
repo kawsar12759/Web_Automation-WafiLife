@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +27,17 @@ public class BasePage {
 
     public String getElementText(By locator){
         return getElement(locator).getText();
+    }
+    public String getCSSValue(By locator,String property){
+        return getElement(locator).getCssValue(property);
+    }
+    public String getAttributeValue(By locator,String attribute){
+        return getElement(locator).getAttribute(attribute);
+    }
+
+    public void hooverOnElement(By locator){
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getDriver().findElement(locator)).build().perform();
     }
     public boolean displayState(By locator){
         return getElement(locator).isDisplayed();
