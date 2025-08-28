@@ -52,4 +52,32 @@ public class TestLoginRegistrationPage extends DriverSetup {
         Assert.assertEquals(loginRegistrationPage.getElementText(loginRegistrationPage.errorText_area),errorText);
 
     }
+
+    @Test
+    public void testUserCanRegisterWithValidCredentials(){
+        loginRegistrationPage.loadPage(loginRegistrationPage.url);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_username_input, loginRegistrationPage.registration_username);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_userPhone_input, loginRegistrationPage.registration_phone);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_userEmail_input, loginRegistrationPage.registration_email);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_password_input, loginRegistrationPage.registration_password);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_confirmPassword_input, loginRegistrationPage.registration_password);
+        loginRegistrationPage.clickOnElement(loginRegistrationPage.registration_btn);
+        Assert.assertEquals(loginRegistrationPage.getElementText(loginRegistrationPage.login_success_display),loginRegistrationPage.registration_success_message);
+
+    }
+
+
+
+@Test(dataProvider = "invalidRegistrationCredentials", dataProviderClass = Dataset.class)
+    public void testUserCannotRegisterWithInvalidCredentials(String user_name, String phone,String email, String password, String confirm_password, String error_text){
+        loginRegistrationPage.loadPage(loginRegistrationPage.url);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_username_input, user_name);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_userPhone_input, phone);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_userEmail_input, email);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_password_input, password);
+        loginRegistrationPage.writeOnElement(loginRegistrationPage.registration_confirmPassword_input, confirm_password);
+        loginRegistrationPage.clickOnElement(loginRegistrationPage.registration_btn);
+        Assert.assertEquals(loginRegistrationPage.getElementText(loginRegistrationPage.errorText_area),error_text);
+
+    }
 }

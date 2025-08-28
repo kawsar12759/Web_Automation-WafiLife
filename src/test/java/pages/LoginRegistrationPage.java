@@ -9,6 +9,8 @@ public class LoginRegistrationPage extends BasePage{
     public String password = "testcase1";
     public String user_name = "xodik69891";
 
+
+
     public String invalid_user_email = "testmail@gmail.com";
     public String invalid_user_name = "testuser12";
 
@@ -23,7 +25,7 @@ public class LoginRegistrationPage extends BasePage{
     public String registration_empty_password_field_errorText = "Error: অনুগ্রহ করে আপনার পাসওয়ার্ড প্রদান করুন";
     public String registration_empty_or_password_mismatch_errorText = "Error: পাসওয়ার্ড মিলতেছে না";
     public String registration_empty_name_field_errorText = "Error: নাম প্রয়োজন!";
-    public String registration_empty_phoneNumber_field_errorText = "Error: ফোন নাম্বার প্রয়োজন!.";
+    public String registration_empty_phoneNumber_field_errorText = "Error: Error: ফোন নাম্বার প্রয়োজন!.";
 
     public By page_heading = By.xpath("//h1[@class='heading-title']");
 
@@ -34,6 +36,12 @@ public class LoginRegistrationPage extends BasePage{
     public By login_username_or_userEmail_input = By.xpath("//input[@id='username']");
     public By login_password_input = By.xpath("//input[@id='password']");
     public By login_btn = By.xpath("//input[@name='login']");
+
+
+    public String registration_username = "testperson6789";
+    public String registration_phone = "01652940101";
+    public String registration_email="testperson6789@gmail.com";
+    public String registration_password = "testpassword";
 
 
     public By registration_heading = By.cssSelector("div[class='col-2'] h2");
@@ -50,9 +58,10 @@ public class LoginRegistrationPage extends BasePage{
     public By registration_password_input = By.xpath("//input[@id='reg_password']");
     public By registration_confirmPassword_input = By.xpath("//input[@id='reg_confirm_password']");
     public By registration_btn = By.xpath("//input[@name='register']");
-    
-    public By errorText_area = By.cssSelector("ul[class='woocommerce-error'] li");
 
+    public String registration_success_message = "আসসালামু আলাইকুম " +registration_username+ " (যদি আপনি "+registration_username+" না হয়ে থাকেন তাহলে লগ অউট করুন)";
+
+    public By errorText_area = By.cssSelector("ul[class='woocommerce-error'] li");
     public By login_success_display = By.xpath("//div[@id='template-wrapper']//p[1]");
     public String login_success_message = "আসসালামু আলাইকুম " +user_name+ " (যদি আপনি "+user_name+" না হয়ে থাকেন তাহলে লগ অউট করুন)";
 
