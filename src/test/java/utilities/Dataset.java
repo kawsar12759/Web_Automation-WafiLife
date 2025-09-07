@@ -10,7 +10,7 @@ public class Dataset {
 
 
     @DataProvider(name="validLoginCredentials")
-    public static Object validLoginCredentials(){
+    public static Object[][] validLoginCredentials(){
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage();
         return new Object[][]{
                 {loginRegistrationPage.user_name, loginRegistrationPage.password},
@@ -18,7 +18,7 @@ public class Dataset {
         };
     }
     @DataProvider(name="invalidLoginCredentials")
-    public static Object invalidLoginCredentials(){
+    public static Object[][] invalidLoginCredentials(){
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage();
         return new Object[][]{
                 {loginRegistrationPage.user_name, "password",loginRegistrationPage.invalid_password_for_username_errorText},
@@ -32,7 +32,7 @@ public class Dataset {
     }
 
     @DataProvider(name="invalidRegistrationCredentials")
-    public static Object invalidRegistrationCredentials(){
+    public static Object[][] invalidRegistrationCredentials(){
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage();
         return new Object[][]{
                 {"","01528192901","testing1@gmail.com", "password","password",loginRegistrationPage.registration_empty_name_field_errorText},
@@ -82,6 +82,26 @@ public class Dataset {
                 {"প্রি-অর্ডার","https://www.wafilife.com/preorder"},
                 {"লাইফস্টাইল","https://www.wafilife.com/lifestyle-products"},
                 {"স্টেশনারী","https://www.wafilife.com/cat/products/stationary-item"}
+        };
+    }
+    @DataProvider(name="homePageCategories")
+    public static Object[][] homePageCategories(){
+        return new Object[][]{
+                {1,"নতুন প্রকাশিত বই","সকল নতুন প্রকাশিত বই","নতুন প্রকাশিত বই","https://www.wafilife.com/cat/home-product/%E0%A6%A8%E0%A6%A4%E0%A7%81%E0%A6%A8-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A6%BF%E0%A6%A4-%E0%A6%AC%E0%A6%87"},
+                {2,"ট্রেন্ডিং বইসমূহ","সকল ট্রেন্ডিং বই","ট্রেন্ডিং বইসমূহ","https://www.wafilife.com/cat/home-product/trending-books"},
+                {3,"সিয়ান যুগপূর্তি অফার","সকল বই","সিয়ান পাবলিকেশন","https://www.wafilife.com/cat/books/publisher/sean-publication"},
+                {4,"রবিউল আউয়াল সীরাত গ্রন্থমালা","সকল বই","সীরাতে রাসূল (সা.)","https://www.wafilife.com/cat/books/subject/serate-rasullullah"},
+//                {6,"তরজমাতুল কুরআন","সকল বই","তরজমা ও তাফসীর","https://www.wafilife.com/cat/books/subject/al-quaraner-tarjama-o-tafseer"},
+                {7,"কুরআন বিষয়ক আলোচনা","সকল বই","কুরআন বিষয়ক আলোচনা","https://www.wafilife.com/cat/books/subject/quran-bishoyok-alochona"},
+                {8,"আল হাদিস","সকল বই","আল হাদিস","https://www.wafilife.com/cat/books/subject/al-hadith"},
+                {9,"সীরাতে রাসূল (সা.)","সকল বই","সীরাতে রাসূল (সা.)","https://www.wafilife.com/cat/books/subject/serate-rasullullah"},
+                {10,"ইতিহাস ও ঐতিহ্য","সকল বই","ইতিহাস ও ঐতিহ্য","https://www.wafilife.com/cat/books/subject/history-and-traditions"},
+                {11,"সাহাবীদের জীবনী","সকল বই","সাহাবীদের জীবনী","https://www.wafilife.com/cat/books/subject/%E0%A6%B8%E0%A6%BE%E0%A6%B9%E0%A6%BE%E0%A6%AC%E0%A6%BE"},
+                {13,"Food","সকল পণ্য","FOOD PRODUCTS","https://www.wafilife.com/cat/products/food-products"},
+                {15,"গ্রাহকদের পছন্দের আতর ও সুগন্ধি পণ্য","সকল আতর ও সুগন্ধি পণ্য","আতর","https://www.wafilife.com/cat/products/cosmetics/attar?wpsolr_sort=sort_by_relevancy_desc"},
+                {16,"প্যাকেজ সমূহ","সকল প্যাকেজ","প্যাকেজসমূহ","https://www.wafilife.com/cat/home-product/packages"},
+                {18,"ইবাদত, আত্মশুদ্ধি ও অনুপ্রেরণা","এই বিষয়ে সকল বই","আত্মশুদ্ধি ও অনুপ্রেরণা","https://www.wafilife.com/cat/books/subject/ibadat-attoshuddhi-o-onuprerona"},
+                //{19,"ঈমান আক্বিদা ও বিশ্বাস","এই বিষয়ে সকল বই","ঈমান ও আকীদা","https://www.wafilife.com/cat/books/subject/faith-and-aqeedah-o-bisshash"},
         };
     }
 }

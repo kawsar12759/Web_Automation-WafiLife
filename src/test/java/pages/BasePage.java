@@ -63,6 +63,15 @@ public class BasePage {
 
     }
 
+    public void waitTextToBeVisible(WebElement element, String textToShow){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.textToBePresentInElement(element, textToShow));
 
+    }
+
+//    Actions actions = new Actions(getDriver());
+//    public void hoverOnElement(WebElement element){
+//        actions.moveToElement(element).build().perform();
+//    }
 
 }
